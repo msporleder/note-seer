@@ -1,0 +1,122 @@
+:root {
+  --ink: #1a1a1a;
+  --paper: #faf8f2;
+  --accent: #b0413e;
+  --muted: #8a867c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: min(480px, 100vw);
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  margin: 0.5rem 0 1rem;
+}
+
+#controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  font: inherit;
+  padding: 0.4rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.listening {
+  background: var(--accent);
+}
+
+select {
+  font: inherit;
+  padding: 0.3rem;
+  max-width: 240px;
+}
+
+#quizinfo {
+  font-size: 0.9rem;
+  min-height: 1.3em;
+}
+
+#quizinfo #quizmsg {
+  font-style: italic;
+}
+
+#status {
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-height: 1.2em;
+}
+
+#staff {
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+#notename {
+  font-size: 3rem;
+  min-height: 4rem;
+  line-height: 4rem;
+}
+
+#freq, #cents {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-height: 1.2em;
+}
+
+#centsbar {
+  position: relative;
+  width: 200px;
+  height: 8px;
+  margin: 0.5rem auto;
+  background: linear-gradient(to right, #ddd, #bbb 49%, var(--ink) 50%, #bbb 51%, #ddd);
+  border-radius: 4px;
+}
+
+#centsneedle {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 3px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: left 80ms linear;
+}
+
+#centsneedle.intune {
+  background: #2e7d32;
+}
+
+#hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}

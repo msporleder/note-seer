@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>note-seer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>note-seer</h1>
+
+  <div id="controls">
+    <button id="start">Start listening</button>
+    <button id="quiz">Quiz</button>
+    <select id="exercise">
+      <option value="random" selected>Random exercise</option>
+    </select>
+    <label>
+      Transpose for:
+      <select id="transpose">
+        <!-- data-low/data-high: rough sounding range in MIDI, used to reject ambient noise -->
+        <option value="0" data-low="36" data-high="96" selected>C (concert pitch)</option>
+        <option value="12" data-low="40" data-high="88">Guitar (written 8ve above sounding)</option>
+        <option value="2" data-low="50" data-high="84">B&#9837; (trumpet, clarinet, soprano sax)</option>
+        <option value="14" data-low="44" data-high="76">B&#9837; +8ve (tenor sax, bass clarinet)</option>
+        <option value="9" data-low="49" data-high="81">E&#9837; (alto sax)</option>
+        <option value="21" data-low="36" data-high="70">E&#9837; +8ve (bari sax)</option>
+        <option value="7" data-low="35" data-high="77">F (horn, english horn)</option>
+        <option value="3" data-low="49" data-high="91">A (clarinet in A)</option>
+        <option value="-2" data-low="56" data-high="86">D (trumpet in D... reversed)</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="status">mic off</div>
+
+  <svg id="staff" viewBox="0 0 360 220" aria-label="music staff"></svg>
+
+  <div id="quizinfo" hidden>
+    <span id="quizprogress"></span>
+    <span id="quizmsg"></span>
+  </div>
+
+  <div id="readout">
+    <div id="notename">&mdash;</div>
+    <div id="freq"></div>
+    <div id="centsbar"><div id="centsneedle"></div></div>
+    <div id="cents"></div>
+  </div>
+
+  <p id="hint">Play or sing a note. Audio is analyzed live and never recorded.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
